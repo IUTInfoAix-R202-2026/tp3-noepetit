@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
 <!--
   TODO exercice 2 (étape 0) : écrire la vue FXML du compteur, de zéro.
 
@@ -40,5 +45,21 @@
 
 <?import javafx.scene.layout.VBox?>
 
-<VBox xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1"
-      prefWidth="360.0" prefHeight="220.0"/>
+<BorderPane xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fr.univ_amu.iut.exercice2.CompteurController"
+      prefWidth="360.0" prefHeight="220.0">
+      <padding>
+          <Insets topRightBottomLeft="20"/>
+      </padding>
+      <center>
+          <Label fx:id="labelCompteur" 
+          text="0"
+          style="-fx-font-size:48;-fx-font-weight: bold;"/>
+      </center>
+      <HBox spacing="10" alignment="CENTER">
+          <Button fx:id="boutonDecrementer"  text="-"  onAction="#decrementer"/>
+          <Button fx:id="boutonIncrementer"  text="+"  onAction="#incrementer"/>
+      </HBox>
+      <bottom>
+          <Button fx:id="boutonReinitialiser" text="Réinitialiser" onAction="#reinitialiser"/>
+      </bottom>
+     </BorderPane>
